@@ -1,4 +1,4 @@
-var mongoose = require('mongoose');
+var mongoose = require('./db');
 
 var reviewSchema = new mongoose.Schema({
 	author:String,
@@ -24,4 +24,6 @@ var locationSchema = new mongoose.Schema({
     reviews:[reviewSchema]
 });
 
-mongoose.model('Location',locationSchema);
+var location = mongoose.model('Location',locationSchema);
+
+module.exports = location;

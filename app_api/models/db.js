@@ -1,8 +1,8 @@
 var mongoose = require('mongoose');
 
-var dbURI = 'mongodb://localhost/Loc8r';
-mongoose.connect(dbURI);
-
+var dbURI = 'mongodb://localhost/locations';
+var db=mongoose.connect(dbURI);
+module.exports=db;
 mongoose.connection.on('connected', function() {
     console.log('mongoose connected to' + dbURI);
 });
